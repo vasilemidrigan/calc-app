@@ -1,0 +1,219 @@
+/* CSS Variables */
+/* Backgrounds */
+:root {
+  /* Theme 1 */
+
+  /* Main Background */
+  --very-dark-desaturated-blue: hsl(222, 26%, 31%);
+  /* Toggle Background, keypad background */
+  --very-dark-desaturated-blue: hsl(223, 31%, 20%);
+  /* Screen Background */
+  --very-dark-desaturated-blue: hsl(224, 36%, 15%);
+
+  /* Keys */
+  /* Key Background */
+  --desaturated-dark-blue: hsl(225, 21%, 49%);
+  /* Key Shadow */
+  --desaturated-dark-blue: hsl(224, 28%, 35%);
+  /* key background, toggle */
+  --red: hsl(6, 63%, 50%);
+  /* key shadow */
+  --dark-red: hsl(6, 70%, 34%);
+  /* key background */
+  --light-grayish-orange: hsl(30, 25%, 89%);
+  /* key shadow */
+  --grayish-orange: hsl(28, 16%, 65%);
+
+  /* Text */
+  --very-dark-grayish-blue: hsl(221, 14%, 31%);
+  --white: hsl(0, 0, 100%);
+
+  /* Theme 2 */
+
+  /* Backgrounds */
+  /* main background */
+  --light-gray: hsl(0, 0%, 90%);
+  /* toggle background, keypad background */
+  --grayish-red: hsl(0, 5%, 81%);
+  /* screen background */
+  --very-light-gray: hsl(0, 0%, 93%);
+
+  /* Keys */
+  /* key background */
+  --dark-moderate-cyan: hsl(185, 42%, 37%);
+  /* key shadow */
+  --very-dark-cyan: hsl(185, 58%, 25%);
+  /* key background, toggle */
+  --orange: hsl(25, 98%, 40%);
+  /* key shadow */
+  --dark-orange: hsl(25, 99%, 27%);
+  /* key background */
+  --light-grayish-yellow: hsl(45, 7%, 89%);
+  /* key shadow */
+  --dark-grayish-orange: hsl(35, 11%, 61%);
+  /* Text */
+  --very-dark-grayish-yellow: hsl(60, 10%, 19%);
+  --white: hsl(0, 0, 100%);
+
+  /* Theme 3 */
+
+  /* Backgrounds */
+  /* main background */
+  --very-dark-violet: hsl(268, 75%, 9%);
+  /* toggle background, keypad background, screen background */
+  --very-dark-violet: hsl(268, 71%, 12%);
+
+  /* Keys */
+  /* key background */
+  --dark-violet: hsl(281, 89%, 26%);
+  /* key shadow */
+  --vivid-magenta: hsl(285, 91%, 52%);
+  /* key background, toggle */
+  --pure-cyan: hsl(176, 100%, 44%);
+  /* key background */
+  --very-dark-violet: hsl(268, 47%, 21%);
+  /* key shadow */
+  --dark-magenta: hsl(290, 70%, 36%);
+  /* Text */
+  --light-yellow: hsl(52, 100%, 62%);
+  --very-dark-blue: hsl(198, 20%, 13%);
+  --white: hsl(0, 0, 100%);
+}
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Spartan, sans-serif;
+  font-size: 32px;
+}
+body {
+  height: 100vh;
+  min-width: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div {
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin: 10px;
+}
+/* Calculator wrapper */
+.calc-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  min-width: 200px;
+  width: 100vw;
+  height: 70%;
+}
+/* Logo */
+.logo {
+  font-size: 28px;
+}
+/* Theme Switcher */
+.theme-switcher {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 20%;
+}
+.theme-switcher-icon {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.theme-text {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.switcher {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.switcher span {
+  font-size: 15px;
+  margin-right: 7px;
+}
+.switch-range {
+  border: 1px solid black;
+  width: 10px;
+  height: 10px;
+}
+/* Display */
+.display {
+  width: 90%;
+  height: 20%;
+}
+/* Buttons */
+.buttons {
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+  grid-template-areas:
+    "seven eight nine delete"
+    "four five six plus"
+    "one two three minus"
+    "dot zero divide multiply"
+    "reset reset equal equal";
+  width: 90%;
+  height: 70%;
+}
+.button {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.one {
+  grid-area: one;
+}
+.two {
+  grid-area: two;
+}
+.three {
+  grid-area: three;
+}
+.four {
+  grid-area: four;
+}
+.five {
+  grid-area: five;
+}
+.six {
+  grid-area: six;
+}
+.seven {
+  grid-area: seven;
+}
+.eight {
+  grid-area: eight;
+}
+.nine {
+  grid-area: nine;
+}
+.zero {
+  grid-area: zero;
+}
+.equal {
+  grid-area: equal;
+}
+.reset {
+  grid-area: reset;
+}
+.plus {
+  grid-area: plus;
+}
+.multiply {
+  grid-area: multiply;
+}
+.divide {
+  grid-area: divide;
+}
+.minus {
+  grid-area: minus;
+}
