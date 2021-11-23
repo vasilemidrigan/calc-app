@@ -4,9 +4,9 @@
   /* Theme 1 */
 
   /* Main Background */
-  --very-dark-desaturated-blue: hsl(222, 26%, 31%);
+  --desaturated-blue: hsl(222, 26%, 31%);
   /* Toggle Background, keypad background */
-  --very-dark-desaturated-blue: hsl(223, 31%, 20%);
+  --dark-desaturated-blue: hsl(223, 31%, 20%);
   /* Screen Background */
   --very-dark-desaturated-blue: hsl(224, 36%, 15%);
 
@@ -26,7 +26,7 @@
 
   /* Text */
   --very-dark-grayish-blue: hsl(221, 14%, 31%);
-  --white: hsl(0, 0, 100%);
+  --white-color: hsl(0, 0%, 100%);
 
   /* Theme 2 */
 
@@ -88,6 +88,7 @@
   font-size: 32px;
 }
 body {
+  background-color: var(--desaturated-blue);
   height: 100vh;
   min-width: 340px;
   display: flex;
@@ -130,27 +131,16 @@ div {
   font-size: 15px;
   text-transform: uppercase;
 }
-.switcher {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.switcher span {
-  font-size: 15px;
-  margin-right: 7px;
-}
-.switch-range {
-  border: 1px solid black;
-  width: 10px;
-  height: 10px;
-}
+
 /* Display */
 .display {
   width: 90%;
   height: 20%;
+  background-color: var(--very-dark-desaturated-blue);
 }
 /* Buttons */
 .buttons {
+  background-color: var(--dark-desaturated-blue);
   display: grid;
   grid-template: repeat(5, 1fr) / repeat(4, 1fr);
   grid-template-areas:
@@ -163,6 +153,7 @@ div {
   height: 70%;
 }
 .button {
+  background-color: var(--white-color);
   margin: 5px;
   display: flex;
   justify-content: center;
@@ -216,4 +207,8 @@ div {
 }
 .minus {
   grid-area: minus;
+}
+/* Theme 1 state */
+.white-color {
+  color: var(--white-color);
 }
