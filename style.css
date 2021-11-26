@@ -95,6 +95,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+button {
+  border: unset;
+}
+button:hover {
+  cursor: pointer;
+}
 div {
   border-radius: 10px;
   margin: 10px;
@@ -147,16 +153,16 @@ div {
   justify-self: center;
   align-self: center;
 }
-.theme.one {
+.theme.first {
   grid-area: theme1;
 }
-.theme.two {
+.theme.second {
   grid-area: theme2;
 }
-.theme.three {
+.theme.third {
   grid-area: theme3;
 }
-/* Ranges */
+/* Slider */
 .range {
   height: 20px;
   margin: 3px;
@@ -164,16 +170,19 @@ div {
   justify-content: center;
   align-items: center;
 }
-.range.one {
+.range:hover {
+  cursor: pointer;
+}
+.range.range-one {
   grid-area: range1;
 }
-.range.two {
+.range.range-two {
   grid-area: range2;
 }
-.range.three {
+.range.range-three {
   grid-area: range3;
 }
-/* Circles */
+/* Sliders circles */
 .circle {
   width: 80%;
   height: 80%;
@@ -183,6 +192,7 @@ div {
   background-color: var(--red);
   border-radius: 50%;
 }
+/* Sliders background */
 .slide {
   z-index: -1;
   background-color: var(--dark-desaturated-blue);
@@ -199,7 +209,11 @@ div {
   display: flex;
   justify-content: end;
   align-items: center;
-  padding: 5px;
+  padding: 10px;
+  overflow: hidden;
+}
+.display span {
+  margin: 10px;
 }
 /* Buttons */
 .buttons {
@@ -216,6 +230,7 @@ div {
   height: 70%;
   padding: 15px;
 }
+/* All math buttons */
 .button {
   background-color: var(--white-color);
   margin: 5px;
@@ -292,6 +307,9 @@ div {
 .minus {
   grid-area: minus;
 }
+
+/* Themes */
+
 /* Theme 1 state */
 .white-color {
   color: var(--white-color);
