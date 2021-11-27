@@ -187,11 +187,6 @@ div {
   width: 80%;
   height: 80%;
 }
-/* Circle Active state */
-.circle--active {
-  background-color: var(--red);
-  border-radius: 50%;
-}
 /* Sliders background */
 .slide {
   z-index: -1;
@@ -200,6 +195,9 @@ div {
   width: 100%;
   height: 50%;
   bottom: 0;
+}
+.slide:hover {
+  cursor: pointer;
 }
 /* Display */
 .display {
@@ -313,4 +311,14 @@ div {
 /* Theme 1 state */
 .white-color {
   color: var(--white-color);
+}
+
+/* Theme 2 state */
+.theme2 {
+  color: var(--very-dark-grayish-yellow);
+}
+/* Circle Active state */
+.circle--active {
+  background-color: var(--red);
+  border-radius: 50%;
 }

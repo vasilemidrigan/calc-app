@@ -1,5 +1,7 @@
 "use strict";
+
 /* Variables and Constants */
+
 /* Numbers */
 const zero = document.querySelector(".zero");
 const one = document.querySelector(".one");
@@ -23,6 +25,13 @@ const multiply = document.querySelector(".multiply");
 const divide = document.querySelector(".divide");
 const period = document.querySelector(".period");
 
+/* Theme Switcher Variables */
+const slide = document.querySelector(".slide");
+const circle = document.querySelectorAll(".circle");
+const calcWrapper = document.querySelector(".calc-wrapper");
+const logo = document.querySelector(".logo");
+const theme = document.querySelectorAll(".theme");
+const themeText = document.querySelector(".theme-text");
 /* Event listeners */
 
 /* Reset function */
@@ -41,7 +50,6 @@ deleteCalc.addEventListener("click", function () {
 });
 /* Adding digits to display*/
 for (let i = 0; i < digits.length; i++) {
-  console.log(digits[i]);
   digits[i].addEventListener("click", function () {
     if (displayCalc.innerHTML === "0") {
       displayCalc.innerHTML = "";
@@ -49,3 +57,25 @@ for (let i = 0; i < digits.length; i++) {
     displayCalc.innerHTML = displayCalc.innerHTML + digits[i].innerHTML;
   });
 }
+
+/* Period function */
+/* Disable period if the floating number already exists on the screen */
+period.addEventListener("click", function () {
+  if (displayCalc.innerHTML.includes(".")) {
+    period.disabled = true;
+  } else {
+    period.disabled = false;
+    displayCalc.innerHTML = displayCalc.innerHTML + ".";
+  }
+});
+
+/* Math operations */
+let calcOperation = 0;
+/* Addition */
+
+/* TO DO */
+addition.addEventListener("click", function () {});
+
+/* Theme switcher */
+
+/* TO DO */
