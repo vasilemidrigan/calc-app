@@ -61,7 +61,7 @@
   /* main background */
   --very-dark-violet: hsl(268, 75%, 9%);
   /* toggle background, keypad background, screen background */
-  --very-dark-violet: hsl(268, 71%, 12%);
+  --dark-violet-background: hsl(268, 74%, 12%);
 
   /* Keys */
   /* key background */
@@ -70,8 +70,10 @@
   --vivid-magenta: hsl(285, 91%, 52%);
   /* key background, toggle */
   --pure-cyan: hsl(176, 100%, 44%);
+  /* key shadow */
+  --sky-blue: hsl(182, 77%, 73%);
   /* key background */
-  --very-dark-violet: hsl(268, 47%, 21%);
+  --very-dark-violet-buttons: hsl(268, 48%, 20%);
   /* key shadow */
   --dark-magenta: hsl(290, 70%, 36%);
   /* Text */
@@ -94,6 +96,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: ease-in-out 0.5s;
 }
 button {
   border: unset;
@@ -125,12 +128,14 @@ div {
 .theme-switcher {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 326px;
   height: 20%;
 }
 .theme-switcher-icon {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 120px;
 }
 .theme-switcher-icon div {
   margin: unset;
@@ -209,9 +214,6 @@ div {
   align-items: center;
   padding: 10px;
   overflow: hidden;
-}
-.display span {
-  margin: 10px;
 }
 /* Buttons */
 .buttons {
@@ -308,17 +310,89 @@ div {
 
 /* Themes */
 
-/* Theme 1 state */
+/* Orange Circle Active state */
+.orange-circle--active {
+  background-color: var(--red);
+  border-radius: 50%;
+  transition: ease-in-out 0.5s;
+}
+/* Blue Circle Active state */
+.blue-circle--active {
+  background-color: var(--pure-cyan);
+  border-radius: 50%;
+  transition: ease-in-out 0.5s;
+}
+
+/* Theme 1 */
 .white-color {
   color: var(--white-color);
 }
 
-/* Theme 2 state */
-.theme2 {
+/* Theme 2 */
+/* Body */
+.main-background-theme2 {
+  background-color: var(--light-gray);
+}
+/* Switcher and Keypad background */
+.toggle-background-theme2,
+.keypad-background-theme2 {
+  background-color: var(--grayish-red);
+}
+/* Display */
+.screen-background-theme2 {
+  background-color: var(--very-light-gray);
+}
+/* Reset and Delete buttons */
+.reset-theme2,
+.delete-theme2 {
+  background-color: var(--dark-moderate-cyan);
+  box-shadow: 0px 4px 0px var(--very-dark-cyan);
+}
+/* Equal button */
+.equal-theme2 {
+  background-color: var(--orange);
+  box-shadow: 0px 4px 0px var(--dark-orange);
+}
+/* Others buttons */
+.keys-theme2 {
+  background-color: var(--light-grayish-yellow);
+  box-shadow: 0px 4px 0px var(--dark-grayish-orange);
+}
+.keys-text-theme2 {
   color: var(--very-dark-grayish-yellow);
 }
-/* Circle Active state */
-.circle--active {
-  background-color: var(--red);
-  border-radius: 50%;
+.keys-white-color {
+  color: var(--white-color);
+}
+
+/* Theme 3 */
+/* Body */
+.main-background-theme3 {
+  background-color: var(--dark-violet-background);
+}
+/* Switcher and Keypad background */
+.toggle-background-theme3,
+.keypad-background-theme3,
+.screen-background-theme3 {
+  background-color: var(--very-dark-violet);
+}
+/* Reset and Delete buttons */
+.reset-theme3,
+.delete-theme3 {
+  background-color: var(--dark-violet);
+  box-shadow: 0px 4px 0px var(--vivid-magenta);
+}
+/* Equal button */
+.equal-theme3 {
+  background-color: var(--pure-cyan);
+  color: var(--very-dark-blue);
+  box-shadow: 0px 4px 0px var(--sky-blue);
+}
+/* Others buttons */
+.keys-theme3 {
+  background-color: var(--very-dark-violet-buttons);
+  box-shadow: 0px 4px 0px var(--dark-magenta);
+}
+.keys-text-theme3 {
+  color: var(--light-yellow);
 }

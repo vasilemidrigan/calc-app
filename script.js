@@ -3,79 +3,177 @@
 /* Variables and Constants */
 
 /* Numbers */
-const zero = document.querySelector(".zero");
-const one = document.querySelector(".one");
-const two = document.querySelector(".two");
-const three = document.querySelector(".three");
-const four = document.querySelector(".four");
-const five = document.querySelector(".five");
-const six = document.querySelector(".six");
-const seven = document.querySelector(".seven");
-const eight = document.querySelector(".eight");
-const nine = document.querySelector(".nine");
-const digits = [zero, one, two, three, four, five, six, seven, eight, nine];
+const numbers = document.querySelectorAll(".number");
+const currentOperand = document.querySelector(".current-operand");
+const previousOperand = document.querySelector(".previous-operand");
+
 /* Functions */
 const resetCalc = document.querySelector(".reset");
-const displayCalc = document.querySelector(".display-calc");
 const deleteCalc = document.querySelector(".delete");
+const equalCalc = document.querySelector(".equal");
 /* Math Operations */
 const addition = document.querySelector(".addition");
 const subtraction = document.querySelector(".subtraction");
 const multiply = document.querySelector(".multiply");
 const divide = document.querySelector(".divide");
-const period = document.querySelector(".period");
+const mathOperations = [addition, subtraction, divide, multiply];
 
 /* Theme Switcher Variables */
-const slide = document.querySelector(".slide");
-const circle = document.querySelectorAll(".circle");
+const body = document.body;
+const divs = document.getElementsByTagName("div");
 const calcWrapper = document.querySelector(".calc-wrapper");
+const buttonsBackground = document.querySelector(".buttons");
 const logo = document.querySelector(".logo");
+const slide = document.querySelector(".slide");
 const theme = document.querySelectorAll(".theme");
 const themeText = document.querySelector(".theme-text");
-/* Event listeners */
-
-/* Reset function */
-resetCalc.addEventListener("click", function () {
-  displayCalc.innerHTML = 0;
-});
-/* Delete last character function*/
-deleteCalc.addEventListener("click", function () {
-  displayCalc.innerHTML = displayCalc.innerHTML.substring(
-    0,
-    displayCalc.innerHTML.length - 1
-  );
-  if (displayCalc.innerHTML.indexOf(".") === displayCalc.innerHTML.length - 1) {
-    displayCalc.innerHTML = displayCalc.innerHTML.replace(".", "");
-  }
-});
-/* Adding digits to display*/
-for (let i = 0; i < digits.length; i++) {
-  digits[i].addEventListener("click", function () {
-    if (displayCalc.innerHTML === "0") {
-      displayCalc.innerHTML = "";
-    }
-    displayCalc.innerHTML = displayCalc.innerHTML + digits[i].innerHTML;
-  });
-}
-
-/* Period function */
-/* Disable period if the floating number already exists on the screen */
-period.addEventListener("click", function () {
-  if (displayCalc.innerHTML.includes(".")) {
-    period.disabled = true;
-  } else {
-    period.disabled = false;
-    displayCalc.innerHTML = displayCalc.innerHTML + ".";
-  }
-});
-
-/* Math operations */
-let calcOperation = 0;
-/* Addition */
-
-/* TO DO */
-addition.addEventListener("click", function () {});
+const circle = document.querySelector(".circle");
+const circleOne = document.querySelector(".circle-one");
+const circleTwo = document.querySelector(".circle-two");
+const circleThree = document.querySelector(".circle-three");
+const display = document.querySelector(".display");
+const buttons = document.getElementsByTagName("button");
 
 /* Theme switcher */
 
-/* TO DO */
+/* First Theme */
+circleOne.addEventListener("click", function () {
+  /* Switchers Circles making appear and disappear */
+  circleOne.classList.add("orange-circle--active");
+  circleTwo.classList.remove("orange-circle--active");
+  circleThree.classList.remove("blue-circle--active");
+  /* Adding theme2 to body, slide, circle, keypad background and display */
+  body.classList.remove("main-background-theme2");
+  body.classList.remove("main-background-theme3");
+  slide.classList.remove("toggle-background-theme2");
+  slide.classList.remove("toggle-background-theme3");
+  circleThree.classList.remove("circle-background-theme2");
+  circleThree.classList.remove("circle-background-theme3");
+  buttonsBackground.classList.remove("keypad-background-theme2");
+  buttonsBackground.classList.remove("keypad-background-theme3");
+  display.classList.remove("screen-background-theme2");
+  display.classList.remove("screen-background-theme3");
+  /* Divs text color change */
+  for (let i = 0; i <= divs.length - 1; i++) {
+    divs[i].classList.remove("keys-text-theme2");
+    divs[i].classList.remove("keys-text-theme3");
+  }
+  /* Buttons Text color change */
+  for (let i = 0; i <= buttons.length - 1; i++) {
+    buttons[i].classList.remove("keys-text-theme2");
+    buttons[i].classList.remove("keys-text-theme3");
+  }
+  /* Delete, Resete and Equal buttons */
+  resetCalc.classList.remove("reset-theme2");
+  deleteCalc.classList.remove("delete-theme2");
+  equalCalc.classList.remove("equal-theme2");
+  resetCalc.classList.remove("reset-theme3");
+  deleteCalc.classList.remove("delete-theme3");
+  equalCalc.classList.remove("equal-theme3");
+  /* Digits from 0 to 9 */
+  for (let i = 0; i <= numbers.length - 1; i++) {
+    numbers[i].classList.remove("keys-theme2");
+    numbers[i].classList.remove("keys-theme3");
+  }
+  /* Multiply, Divide, Addition, Subtraction and Period buttons */
+  for (let i = 0; i <= mathOperations.length - 1; i++) {
+    mathOperations[i].classList.remove("keys-theme2");
+    mathOperations[i].classList.remove("keys-theme3");
+  }
+});
+
+/* Second Theme */
+circleTwo.addEventListener("click", function () {
+  /* Switchers Circles making appear and disappear */
+  circleTwo.classList.add("orange-circle--active");
+  circleOne.classList.remove("orange-circle--active");
+  circleThree.classList.remove("blue-circle--active");
+  /* Adding theme2 to body, slide, keypad background and display */
+  body.classList.add("main-background-theme2");
+  body.classList.remove("main-background-theme3");
+  slide.classList.add("toggle-background-theme2");
+  slide.classList.remove("toggle-background-theme3");
+  buttonsBackground.classList.add("keypad-background-theme2");
+  buttonsBackground.classList.remove("keypad-background-theme3");
+  display.classList.add("screen-background-theme2");
+  display.classList.remove("screen-background-theme3");
+  /* Divs text color change */
+  for (let i = 0; i <= divs.length - 1; i++) {
+    divs[i].classList.add("keys-text-theme2");
+    divs[i].classList.remove("keys-text-theme3");
+  }
+  /* Buttons Text color change */
+  for (let i = 0; i <= buttons.length - 1; i++) {
+    buttons[i].classList.add("keys-text-theme2");
+    buttons[i].classList.remove("keys-text-theme3");
+  }
+  /* Delete, Reset and Equal buttons */
+  resetCalc.classList.add("reset-theme2");
+  deleteCalc.classList.add("delete-theme2");
+  equalCalc.classList.add("equal-theme2");
+  resetCalc.classList.add("keys-white-color");
+  deleteCalc.classList.add("keys-white-color");
+  equalCalc.classList.add("keys-white-color");
+  resetCalc.classList.remove("reset-theme3");
+  deleteCalc.classList.remove("delete-theme3");
+  equalCalc.classList.remove("equal-theme3");
+  /* Digits from 0 to 9 */
+  for (let i = 0; i <= numbers.length - 1; i++) {
+    numbers[i].classList.add("keys-theme2");
+    numbers[i].classList.remove("keys-theme3");
+  }
+  /* Multiply, Divide, Addition, Subtraction and Period buttons */
+  for (let i = 0; i <= mathOperations.length - 1; i++) {
+    mathOperations[i].classList.add("keys-theme2");
+    mathOperations[i].classList.remove("keys-theme3");
+  }
+});
+
+/* Third Theme */
+circleThree.addEventListener("click", function () {
+  /* Switchers Circles making appear and disappear */
+  circleThree.classList.add("blue-circle--active");
+  circleOne.classList.remove("orange-circle--active");
+  circleTwo.classList.remove("orange-circle--active");
+  /* Adding theme2 to body, slide, circle, keypad background and display */
+  body.classList.add("main-background-theme3");
+  body.classList.remove("main-background-theme2");
+  slide.classList.add("toggle-background-theme3");
+  slide.classList.remove("toggle-background-theme2");
+  circleThree.classList.add("circle-background-theme3");
+  circleThree.classList.remove("circle-background-theme2");
+  buttonsBackground.classList.add("keypad-background-theme3");
+  buttonsBackground.classList.remove("keypad-background-theme2");
+  display.classList.add("screen-background-theme3");
+  display.classList.remove("screen-background-theme2");
+  /* Divs text color change */
+  for (let i = 0; i <= divs.length - 1; i++) {
+    divs[i].classList.add("keys-text-theme3");
+    divs[i].classList.remove("keys-text-theme2");
+  }
+  /* Buttons Text color change */
+  for (let i = 0; i <= buttons.length - 1; i++) {
+    buttons[i].classList.add("keys-text-theme3");
+    buttons[i].classList.remove("keys-text-theme2");
+  }
+  /* Delete, Resete and Equal buttons */
+  resetCalc.classList.add("reset-theme3");
+  deleteCalc.classList.add("delete-theme3");
+  equalCalc.classList.add("equal-theme3");
+  resetCalc.classList.remove("keys-white-color");
+  deleteCalc.classList.remove("keys-white-color");
+  equalCalc.classList.remove("keys-white-color");
+  resetCalc.classList.remove("reset-theme2");
+  deleteCalc.classList.remove("delete-theme2");
+  equalCalc.classList.remove("equal-theme2");
+  /* Digits from 0 to 9 */
+  for (let i = 0; i <= numbers.length - 1; i++) {
+    numbers[i].classList.add("keys-theme3");
+    numbers[i].classList.remove("keys-theme2");
+  }
+  /* Multiply, Divide, Addition, Subtraction and Period buttons */
+  for (let i = 0; i <= mathOperations.length - 1; i++) {
+    mathOperations[i].classList.add("keys-theme3");
+    mathOperations[i].classList.remove("keys-theme2");
+  }
+});
